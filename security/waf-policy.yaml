@@ -1,3 +1,4 @@
+# security/waf-policy.yaml
 apiVersion: appprotect.f5.com/v1
 kind: APPolicy
 metadata:
@@ -12,5 +13,8 @@ spec:
     blocking-settings:
       violations:
         - name: VIOL_SQL_INJECTION
+          alarm: true
+          block: true
+        - name: VIOL_ATTACK_SIGNATURE
           alarm: true
           block: true
