@@ -1,20 +1,18 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
 metadata:
-  name: webapp-ingress
+  name: webapp-vs
   namespace: default
-  annotations:
-    nginx.com/policies: "default/waf-policy-map"
 spec:
-  ingressClassName: nginx
-  rules:
-  - host: webapp.demo.local
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: webapp-svc
-            port:
-              number: 80
+  host: webapp.demo.local
+  policies:
+    - name: waf-policy-map
+  upstreams:
+    - name: webapp
+      service: webapp-svc
+      port: 80
+  routes:
+    - path: /
+      action:
+        pass: webapp
