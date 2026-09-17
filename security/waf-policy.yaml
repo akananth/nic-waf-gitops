@@ -1,0 +1,16 @@
+apiVersion: appprotect.f5.com/v1
+kind: APPolicy
+metadata:
+  name: dataguard-policy
+  namespace: default
+spec:
+  policy:
+    name: dataguard-policy
+    template:
+      name: POLICY_TEMPLATE_NGINX_BASE
+    enforcementMode: transparent
+    blocking-settings:
+      violations:
+        - name: VIOL_SQL_INJECTION
+          alarm: true
+          block: true
