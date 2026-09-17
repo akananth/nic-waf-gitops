@@ -8,7 +8,7 @@ spec:
     name: dataguard-policy
     template:
       name: POLICY_TEMPLATE_NGINX_BASE
-    enforcementMode: transparent
+    enforcementMode: blocking
     blocking-settings:
       violations:
         - name: VIOL_SQL_INJECTION
