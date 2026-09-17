@@ -2,10 +2,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-# These paths are mapped to match your repository layout
 resources:
-  - deployment/app-deployment.yaml
-  - deployment/app-ingress.yaml
+  - base/app-deployment.yaml
+  - base/app-ingress.yaml
   - security/logconf.yaml
   - security/waf-policy.yaml
   - security/k8s-policy-map.yaml
