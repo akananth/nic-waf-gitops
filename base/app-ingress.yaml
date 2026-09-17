@@ -4,11 +4,12 @@ metadata:
   name: webapp-ingress
   namespace: default
   annotations:
-    k8s.nginx.org/policies: "default/waf-policy"
+    k8s.nginx.org/policies: "default/waf-policy-map"
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: webapp.demo.local
+    http:
       paths:
       - path: /
         pathType: Prefix
