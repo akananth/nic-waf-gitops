@@ -1,0 +1,11 @@
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Tell Kustomize which directories (or specific files) to deploy
+resources:
+  - base/app-deployment.yaml
+  - base/app-ingress.yaml
+  - security/logconf.yaml
+  - security/waf-policy.yaml
+  - security/k8s-policy-map.yaml
