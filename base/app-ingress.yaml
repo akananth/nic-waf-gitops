@@ -4,7 +4,7 @@ metadata:
   name: webapp-ingress
   namespace: default
   annotations:
-    k8s.nginx.org/policies: "default/waf-policy-map"
+    nginx.com/policies: "default/waf-policy-map"
 spec:
   ingressClassName: nginx
   rules:
