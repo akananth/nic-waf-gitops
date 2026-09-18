@@ -9,4 +9,4 @@ spec:
     apPolicy: "default/dataguard-policy"
     securityLogs:
       - apLogConf: "default/waf-logconf"
-        logDest: "syslog-svc.default.svc.cluster.local:514"
+        logDest: "syslog:server=syslog-svc.default.svc.cluster.local:514"
