@@ -7,5 +7,6 @@ resources:
   - base/app-ingress.yaml
   - security/waf-policy.yaml
   - security/k8s-policy-map.yaml
+  
 
 
