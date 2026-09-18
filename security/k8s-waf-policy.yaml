@@ -1,7 +1,7 @@
 apiVersion: k8s.nginx.org/v1
 kind: Policy
 metadata:
-  name: waf-policy
+  name: waf-policy-map
   namespace: default
 spec:
   waf:
@@ -9,4 +9,4 @@ spec:
     apPolicy: "default/dataguard-policy"
     securityLogs:
       - apLogConf: "default/waf-logconf"
-        logDest: "stderr"
+        logDest: "syslog-svc.default.svc.cluster.local:514"
