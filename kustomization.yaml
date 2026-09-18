@@ -6,7 +6,7 @@ resources:
   - base/app-deployment.yaml
   - base/app-ingress.yaml
   - security/waf-policy.yaml
-  - security/k8s-policy-map.yaml
+  - security/k8s-waf-policy.yaml
   
 
 
