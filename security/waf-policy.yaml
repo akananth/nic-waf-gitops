@@ -2,7 +2,7 @@ apiVersion: appprotect.f5.com/v1
 kind: APPolicy
 metadata:
   name: dataguard-policy
-  namespace: security
+  namespace: default
 spec:
   policy:
     name: dataguard-policy
@@ -30,7 +30,7 @@ apiVersion: appprotect.f5.com/v1
 kind: APLogConf
 metadata:
   name: waf-logconf
-  namespace: security
+  namespace: default
 spec:
   content:
     format: default
